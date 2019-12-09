@@ -26,7 +26,7 @@ public interface QuestionaryService {
     @Consumes("application/json")
     @Produces("application/json")
     @Path("/getPregunta")
-    public Pregunta getNextPregunta(@NotNull Alumno alumno);
+    public List<Pregunta> getNextPregunta(@NotNull Alumno alumno);
 
     @POST
     @Consumes("application/json")

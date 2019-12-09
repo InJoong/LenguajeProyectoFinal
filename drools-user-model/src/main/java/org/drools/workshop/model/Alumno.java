@@ -1,13 +1,16 @@
 package org.drools.workshop.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import java.util.List;
+import java.util.ArrayList;
 
 public class Alumno {
     private String name;
     private int semester;
     private String course;
 	private int point;
-	private Pregunta nextQuestion;
+	private Categoria category;
+	private List<Pregunta> nextQuestion = new ArrayList<>();
 
     public Alumno() {}
 
@@ -15,15 +18,23 @@ public class Alumno {
 		this.name = name;
 		this.semester = semester;
 		this.course = course;
-		this.point = 0;
+		this.point = 50;
 	}
 	
-	public Alumno(String name, int semester, int point, String course, Pregunta nextQuestion) {
+	public Alumno(String name, int semester, int point, String course, List<Pregunta> nextQuestion) {
 		this.name = name;
 		this.semester = semester;
 		this.course = course;
 		this.point = point;
 		this.nextQuestion = nextQuestion;
+	}
+
+	public Categoria getCategory() {
+		return category;
+	}
+
+	public void setCategory(Categoria category) {
+		this.category = category;
 	}
 
     public String getName(){
@@ -58,11 +69,11 @@ public class Alumno {
 		this.point = point;
 	}
 
-	public Pregunta getPregunta(){
+	public List<Pregunta> getPregunta(){
 		return nextQuestion;
 	}
 
-	public void setPregunta(Pregunta nextQuestion){
+	public void setPregunta(List<Pregunta> nextQuestion){
 		this.nextQuestion = nextQuestion;
 	}
 

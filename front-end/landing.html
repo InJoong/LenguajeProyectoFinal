@@ -33,7 +33,7 @@
 
 
     <script type="text/javascript">
-        let pregunta;
+                let pregunta;
                 let name = "";
                 let semester = 0;
                 let course = "";
@@ -51,7 +51,8 @@
                         if (xhr.readyState == 4) {
                             if(xhr.status == 200){
                             console.log(xhr.responseText);
-                            pregunta = JSON.parse(xhr.responseText);
+                            let preguntasArray = JSON.parse(xhr.responseText);
+                            pregunta = preguntasArray[Math.floor(Math.random()*preguntasArray.length)];
                             document.getElementById("exampleFormControlTextarea1").value = pregunta.question;
                             let botonSubmit = document.getElementById("submit");
                             botonSubmit.disabled = false;

@@ -34,7 +34,7 @@ public class QuestionaryServiceImpl implements QuestionaryService {
     }
 
     @Override
-    public Pregunta getNextPregunta(Alumno alumno){
+    public List<Pregunta> getNextPregunta(Alumno alumno){
         boolean existe = checkAlumno(alumno);
         if(existe){
             //Si

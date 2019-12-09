@@ -4,6 +4,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 public class Pregunta {
     private String course;
+    private String category;
     private String question;
     private String answer;
     private String feedback;
@@ -12,8 +13,9 @@ public class Pregunta {
 
     public Pregunta() {}
 
-    public Pregunta(String course, String question, String answer, String feedback, int difficulty, int semester) {
+    public Pregunta(String course, String question, String answer, String feedback, String category, int difficulty, int semester) {
         this.course = course;
+        this.category = category;
         this.question = question;
         this.answer = answer;
         this.feedback = feedback;
@@ -29,6 +31,14 @@ public class Pregunta {
         this.course = course;
     }
 
+    public String getCategory(){
+        return category;
+    }
+
+    public void setCategory(String category){
+        this.category = category;
+    }
+
     public String getQuestion(){
         return question;
     }
@@ -41,7 +51,7 @@ public class Pregunta {
         return answer;
     }
 
-    public void setAnswer(){
+    public void setAnswer(String answer){
         this.answer = answer;
     }
 
@@ -49,7 +59,7 @@ public class Pregunta {
         return feedback;
     }
 
-    public void setFeedback(){
+    public void setFeedback(String feedback){
         this.feedback = feedback;
     }
 
