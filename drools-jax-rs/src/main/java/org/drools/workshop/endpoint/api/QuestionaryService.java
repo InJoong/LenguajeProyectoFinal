@@ -16,6 +16,12 @@ import org.drools.workshop.model.*;
 
 @Path("questionary")
 public interface QuestionaryService {
+    @GET
+    @Produces("text/html")
+    @Path("/")
+    public String getLanding();
+
+
     @POST
     @Consumes("application/json")
     @Produces("application/json")

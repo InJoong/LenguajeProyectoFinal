@@ -1,1 +1,2 @@
 target/*
+\drools-jax-rs\target\*

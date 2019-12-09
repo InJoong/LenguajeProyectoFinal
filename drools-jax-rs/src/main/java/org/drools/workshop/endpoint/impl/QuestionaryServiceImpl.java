@@ -2,10 +2,14 @@ package org.drools.workshop.endpoint.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.*;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import org.drools.workshop.model.*;
 
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import org.drools.workshop.endpoint.api.*;
 import org.kie.api.cdi.KReleaseId;
 import org.kie.api.cdi.KSession;
@@ -133,6 +137,22 @@ public class QuestionaryServiceImpl implements QuestionaryService {
             System.out.println(">> Fact: " + o);
         }
         System.out.println(" >> End - Printing All Facts in the Kie Session");
+    }
+
+    @Override
+    public String getLanding() {
+        //Regresar los contenidos deel html front-end/scripts.html
+        StringBuilder contentBuilder = new StringBuilder();
+        try (Stream<String> stream = Files.lines( Paths.get("front-end/landing.html"))) 
+        {
+            stream.forEach(s -> contentBuilder.append(s).append("\n"));
+        }
+        catch (Exception e) 
+        {
+            e.printStackTrace();
+        }
+        return contentBuilder.toString();
+
     }
 
 }

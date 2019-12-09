@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>E-Learning</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">
+        body{
+            background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.11) 0px, rgba(0, 0, 0, 0.11) 12px, rgba(1, 1, 1, 0.16) 12px, rgba(1, 1, 1, 0.16) 24px, rgba(0, 0, 0, 0.14) 24px, rgba(0, 0, 0, 0.14) 36px, rgba(0, 0, 0, 0.23) 36px, rgba(0, 0, 0, 0.23) 48px, rgba(0, 0, 0, 0.12) 48px, rgba(0, 0, 0, 0.12) 60px, rgba(1, 1, 1, 0.07) 60px, rgba(1, 1, 1, 0.07) 72px, rgba(0, 0, 0, 0.21) 72px, rgba(0, 0, 0, 0.21) 84px, rgba(0, 0, 0, 0.24) 84px, rgba(0, 0, 0, 0.24) 96px, rgba(1, 1, 1, 0.23) 96px, rgba(1, 1, 1, 0.23) 108px, rgba(1, 1, 1, 0.07) 108px, rgba(1, 1, 1, 0.07) 120px, rgba(0, 0, 0, 0.01) 120px, rgba(0, 0, 0, 0.01) 132px, rgba(1, 1, 1, 0.22) 132px, rgba(1, 1, 1, 0.22) 144px, rgba(1, 1, 1, 0.24) 144px, rgba(1, 1, 1, 0.24) 156px, rgba(0, 0, 0, 0) 156px, rgba(0, 0, 0, 0) 168px, rgba(0, 0, 0, 0.12) 168px, rgba(0, 0, 0, 0.12) 180px), repeating-linear-gradient(90deg, rgba(1, 1, 1, 0.01) 0px, rgba(1, 1, 1, 0.01) 12px, rgba(1, 1, 1, 0.15) 12px, rgba(1, 1, 1, 0.15) 24px, rgba(0, 0, 0, 0.09) 24px, rgba(0, 0, 0, 0.09) 36px, rgba(0, 0, 0, 0.02) 36px, rgba(0, 0, 0, 0.02) 48px, rgba(0, 0, 0, 0.1) 48px, rgba(0, 0, 0, 0.1) 60px, rgba(1, 1, 1, 0.07) 60px, rgba(1, 1, 1, 0.07) 72px, rgba(1, 1, 1, 0.15) 72px, rgba(1, 1, 1, 0.15) 84px, rgba(0, 0, 0, 0.18) 84px, rgba(0, 0, 0, 0.18) 96px, rgba(1, 1, 1, 0.15) 96px, rgba(1, 1, 1, 0.15) 108px, rgba(1, 1, 1, 0.09) 108px, rgba(1, 1, 1, 0.09) 120px, rgba(1, 1, 1, 0.07) 120px, rgba(1, 1, 1, 0.07) 132px, rgba(1, 1, 1, 0.05) 132px, rgba(1, 1, 1, 0.05) 144px, rgba(0, 0, 0, 0.1) 144px, rgba(0, 0, 0, 0.1) 156px, rgba(1, 1, 1, 0.18) 156px, rgba(1, 1, 1, 0.18) 168px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.24) 0px, rgba(0, 0, 0, 0.24) 16px, rgba(1, 1, 1, 0.06) 16px, rgba(1, 1, 1, 0.06) 32px, rgba(0, 0, 0, 0.16) 32px, rgba(0, 0, 0, 0.16) 48px, rgba(1, 1, 1, 0) 48px, rgba(1, 1, 1, 0) 64px, rgba(1, 1, 1, 0.12) 64px, rgba(1, 1, 1, 0.12) 80px, rgba(1, 1, 1, 0.22) 80px, rgba(1, 1, 1, 0.22) 96px, rgba(0, 0, 0, 0.24) 96px, rgba(0, 0, 0, 0.24) 112px, rgba(0, 0, 0, 0.25) 112px, rgba(0, 0, 0, 0.25) 128px, rgba(1, 1, 1, 0.12) 128px, rgba(1, 1, 1, 0.12) 144px, rgba(0, 0, 0, 0.18) 144px, rgba(0, 0, 0, 0.18) 160px, rgba(1, 1, 1, 0.03) 160px, rgba(1, 1, 1, 0.03) 176px, rgba(1, 1, 1, 0.1) 176px, rgba(1, 1, 1, 0.1) 192px), repeating-linear-gradient(135deg, rgba(1, 1, 1, 0.18) 0px, rgba(1, 1, 1, 0.18) 3px, rgba(0, 0, 0, 0.09) 3px, rgba(0, 0, 0, 0.09) 6px, rgba(0, 0, 0, 0.08) 6px, rgba(0, 0, 0, 0.08) 9px, rgba(1, 1, 1, 0.05) 9px, rgba(1, 1, 1, 0.05) 12px, rgba(0, 0, 0, 0.01) 12px, rgba(0, 0, 0, 0.01) 15px, rgba(1, 1, 1, 0.12) 15px, rgba(1, 1, 1, 0.12) 18px, rgba(0, 0, 0, 0.05) 18px, rgba(0, 0, 0, 0.05) 21px, rgba(1, 1, 1, 0.16) 21px, rgba(1, 1, 1, 0.16) 24px, rgba(1, 1, 1, 0.07) 24px, rgba(1, 1, 1, 0.07) 27px, rgba(1, 1, 1, 0.23) 27px, rgba(1, 1, 1, 0.23) 30px, rgba(0, 0, 0, 0.2) 30px, rgba(0, 0, 0, 0.2) 33px, rgba(0, 0, 0, 0.18) 33px, rgba(0, 0, 0, 0.18) 36px, rgba(1, 1, 1, 0.12) 36px, rgba(1, 1, 1, 0.12) 39px, rgba(1, 1, 1, 0.13) 39px, rgba(1, 1, 1, 0.13) 42px, rgba(1, 1, 1, 0.2) 42px, rgba(1, 1, 1, 0.2) 45px, rgba(1, 1, 1, 0.18) 45px, rgba(1, 1, 1, 0.18) 48px, rgba(0, 0, 0, 0.2) 48px, rgba(0, 0, 0, 0.2) 51px, rgba(1, 1, 1, 0) 51px, rgba(1, 1, 1, 0) 54px, rgba(0, 0, 0, 0.03) 54px, rgba(0, 0, 0, 0.03) 57px, rgba(1, 1, 1, 0.06) 57px, rgba(1, 1, 1, 0.06) 60px, rgba(1, 1, 1, 0) 60px, rgba(1, 1, 1, 0) 63px, rgba(0, 0, 0, 0.1) 63px, rgba(0, 0, 0, 0.1) 66px, rgba(1, 1, 1, 0.19) 66px, rgba(1, 1, 1, 0.19) 69px), linear-gradient(90deg, rgb(239, 53, 115), rgb(79, 2, 93));
+            width: 50%;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        input, textarea, select{
+            width: 90% !important;
+            margin: 10px auto;
+        }
+
+        .wrapper{
+            -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 19px 1px rgba(0,0,0,0); 
+            box-shadow: 0px 10px 13px -7px #000000, 5px 5px 19px 1px rgba(0,0,0,0);
+        }
+
+        .btn-group{
+            margin: auto;
+        }
+
+        .btn{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+
+
+    <script type="text/javascript">
+        let pregunta;
+                let name = "";
+                let semester = 0;
+                let course = "";
+
+                function cosasComunes(){
+                    name = document.getElementById("element_1").value;
+                    semester = document.getElementById("element_2").value;
+                    course = document.getElementById("element_3").value;
+                    xhr = new XMLHttpRequest();
+                    var url = "http://localhost:8080/api/questionary/getPregunta/";
+                    xhr.open("POST", url, true);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    var data = JSON.stringify({"name": name, "semester": semester, "course": course});
+                    xhr.onreadystatechange = function (aEvt) {
+                        if (xhr.readyState == 4) {
+                            if(xhr.status == 200){
+                            console.log(xhr.responseText);
+                            pregunta = JSON.parse(xhr.responseText);
+                            document.getElementById("exampleFormControlTextarea1").value = pregunta.question;
+                            let botonSubmit = document.getElementById("submit");
+                            botonSubmit.disabled = false;
+                            } else{
+                            console.log("Error loading page\n");
+                            }
+                        }
+                    };
+                    xhr.send(data);
+                    let botonSiguiente = document.getElementById("sigPreg");
+                    botonSiguiente.disabled = true;
+                    return false;
+                }
+                function getPreguntaInicio() {
+                   cosasComunes();
+                }
+
+                function getPregunta() {
+                    cosasComunes();
+                    document.getElementById("element_4").value = "";
+                    document.getElementById("Retroalimentacion").value = "";
+                }
+
+                function submitRespuesta(){
+                    xhr = new XMLHttpRequest();
+                    var url = "http://localhost:8080/api/questionary/submitPregunta/";
+                    xhr.open("POST", url, true);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    //Determinar si correcta
+                    let esCorrecto = false;
+                    if(pregunta.answer == document.getElementById("element_4").value) {
+                        document.getElementById("Retroalimentacion").value = "Tu respuesta fue correcta";
+                        esCorrecto = true;
+                    } else {
+                        document.getElementById("Retroalimentacion").value = pregunta.feedback;
+                        esCorrecto = false;
+                    }
+
+
+                    var data = JSON.stringify({"name": name, "semester": semester, "course": course, "answer": esCorrecto});
+                    xhr.onreadystatechange = function (aEvt) {
+                        if (xhr.readyState == 4) {
+                            if(xhr.status == 200){
+                            console.log(xhr.responseText);
+                            pregunta = JSON.parse(xhr.responseText);
+                            document.getElementById("preguntaDiv").value = respuesta.question;
+                            let botonSubmit = document.getElementById("submit");
+                            botonSubmit.disabled = false;
+                            } else{
+                            console.log("Error loading page\n");
+                            }
+                        }
+                    };
+                    xhr.send(data);
+                    let botonSiguiente = document.getElementById("sigPreg");
+                    botonSiguiente.disabled = false;
+
+                    let botonSubmit = document.getElementById("submit");
+                    botonSubmit.disabled = true;
+
+                    return false;
+                }
+                
+                function redirect(path)
+                {
+                    var url = "./familiaTabla.html?value='";
+                    window.location(url);
+                }
+    
+    </script>
+    
+</head>
+<body>
+	<form>
+		<div class="container d-flex justify-content-center">
+			<div class="wrapper card">
+			  <div class="card-header">
+			    E-Learning
+			  </div>
+			  <div class="card-body">
+			  	<div class="form-group">
+				  	<div class="card">
+						<div class="container">
+							<div class="row">
+								<input type="text" id="element_1" class="form-control" placeholder="Nombre" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+							</div>
+							<div class="row">
+								<select class="form-control col-md-5" id="element_2">
+                                  <option disabled selected>Semestre</option>
+                                  <option value = 1>1</option>
+                                  <option value = 2>2</option>
+                                  <option value = 3>3</option>
+                                  <option value = 4>4</option>
+                                  <option value = 5>5</option>
+                                  <option value = 6>6</option>
+                                  <option value = 7>7</option>
+                                  <option value = 8>8</option>
+                                  <option value = 9>9</option>
+								</select>
+								<select class="form-control col-md-5" id="element_3">
+                                  <option disabled selected>Curso</option>
+                                  <option value = "Matematicas">Matematicas</option>
+                                  <option value = "Historia">Historia</option>
+								</select>
+							</div>
+						</div>
+				    </div>
+				    <button type="button" class="btn btn-primary btn-lg btn-block" onclick="getPreguntaInicio()">Inicializar</button>
+				</div>
+				<div class="form-group">
+				    <div class="card">
+						<div class="container">
+							<div class="row">
+    							<textarea class="form-control" placeholder="Pregunta" id="exampleFormControlTextarea1" disabled rows="3"></textarea>
+								<input type="text" class="form-control" placeholder="Retroalimentacion" id = "Retroalimentacion" disabled aria-label="Default" aria-describedby="inputGroup-sizing-default">
+								<input type="text" class="form-control" placeholder="Respuesta" id="element_4" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+								<div class="btn-group" role="group" aria-label="Basic example">
+								  <button type="button" class="btn btn-primary" id="submit" onclick="submitRespuesta()" disabled>Submit</button>
+								  <button type="button" class="btn btn-success" id="sigPreg" onclick="getPregunta()" disabled>Siguiente</button>
+								</div>
+							</div>
+						</div>
+				    </div>
+				</div>
+			  </div>
+			</div>		
+		</div>		
+	</form>
+</body>
+</html>

@@ -1,19 +1,74 @@
 <html>
     <head>
-            <title>Cosos</title>
+            <title></title>
             <script type="text/javascript">
 
-                function f() {
-                    var name = document.getElementById("element_1").value;
-                    var semester = document.getElementById("element_2").value;
-                    var course = document.getElementById("element_3").value;
+                let pregunta;
+                let name = "";
+                let semester = 0;
+                let course = "";
+                function getPregunta() {
+                    name = document.getElementById("element_1").value;
+                    semester = document.getElementById("element_2").value;
+                    course = document.getElementById("element_3").value;
                     xhr = new XMLHttpRequest();
-                    var url = "http://localhost:8080/api/familia/inserta/";
+                    var url = "http://localhost:8080/api/questionary/getPregunta/";
                     xhr.open("POST", url, true);
                     xhr.setRequestHeader("Content-Type", "application/json");
-                    var data = JSON.stringify({"name": name, "semester": age, "course": course});
-                    alert(data);
+                    var data = JSON.stringify({"name": name, "semester": semester, "course": course});
+                    xhr.onreadystatechange = function (aEvt) {
+                        if (xhr.readyState == 4) {
+                            if(xhr.status == 200){
+                            console.log(xhr.responseText);
+                            pregunta = JSON.parse(xhr.responseText);
+                            document.getElementById("preguntaDiv").innerHTML = pregunta.question;
+                            let botonSubmit = document.getElementById("submit");
+                            botonSubmit.disabled = false;
+                            } else{
+                            console.log("Error loading page\n");
+                            }
+                        }
+                    };
                     xhr.send(data);
+                    let botonSiguiente = document.getElementById("sigPreg");
+                    botonSiguiente.disabled = true;
+                    return false;
+                }
+
+                function submitRespuesta(){
+                    xhr = new XMLHttpRequest();
+                    var url = "http://localhost:8080/api/questionary/submitPregunta/";
+                    xhr.open("POST", url, true);
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                    //Determinar si correcta
+                    let esCorrecto = false;
+                    if(pregunta.answer == document.getElementById("element_4").value) {
+                        document.getElementById("preguntaDiv").innerHTML = "Tu respuesta fue correecta";
+                        esCorrecto = true;
+                    } else {
+                        document.getElementById("preguntaDiv").innerHTML = pregunta.feedback;
+                        esCorrecto = false;
+                    }
+
+
+                    var data = JSON.stringify({"name": name, "semester": semester, "course": course, "answer": esCorrecto});
+                    xhr.onreadystatechange = function (aEvt) {
+                        if (xhr.readyState == 4) {
+                            if(xhr.status == 200){
+                            console.log(xhr.responseText);
+                            pregunta = JSON.parse(xhr.responseText);
+                            document.getElementById("preguntaDiv").innerHTML = respuesta.question;
+                            let botonSubmit = document.getElementById("submit");
+                            botonSubmit.disabled = false;
+                            } else{
+                            console.log("Error loading page\n");
+                            }
+                        }
+                    };
+                    xhr.send(data);
+                    let botonSiguiente = document.getElementById("sigPreg");
+                    botonSiguiente.disabled = false;
+
                     return false;
                 }
                 
@@ -28,11 +83,12 @@
         <input type="text" id="element_1" placeholder="nombre">
         <input type="text" id="element_2" placeholder="semestre">
         <input type="text" id="element_3" placeholder="course">
-        <button type="button" id="inicializar">Inicializar</button>
-        
-        <button type="button" id="submit">Submit</button>
+        <button type="button" id="inicializar" onclick="getPregunta()">Inicializar</button>
+        <div id="preguntaDiv">Aqui va la pregunta</div>
+        <div id="retro"></div>
+        <button type="button" id="submit" disabled onclick="submitRespuesta()">Submit</button>
         <input type="text" id="element_4" placeholder="respuesta">
-        <button type="button" id="sigPreg">Siguiente Pregunta</button>
+        <button type="button" id="sigPreg" disabled onclick="getPregunta()">Siguiente Pregunta</button>
     </body>
 </html>
 
